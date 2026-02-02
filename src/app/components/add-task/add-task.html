@@ -1,1 +1,19 @@
-<p>add-task works!</p>
+<h2>Ajouter une tâche</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <label>Titre</label>
+  <input type="text" formControlName="title">
+
+  <label>Description</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Statut</label>
+  <select formControlName="status">
+    <option value="todo">À faire</option>
+    <option value="doing">En cours</option>
+    <option value="done">Fait</option>
+  </select>
+
+  <button type="submit" [disabled]="form.invalid">Ajouter</button>
+</form>
